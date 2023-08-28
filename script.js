@@ -37,8 +37,6 @@ function checknome(){
     document.getElementById("testo_input").value = "";
     if (tentativi == 3){
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
-            console.log(parola);
-            console.log(tentativi);
             tentativi = 3;
             immagine_random();            
         }else{
@@ -50,8 +48,6 @@ function checknome(){
     else if (tentativi == 2){
         tentativi = tentativi-1;
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
-            console.log(parola);
-            console.log(tentativi);
             tentativi = 3;
             immagine_random();            
         }else{
@@ -62,8 +58,6 @@ function checknome(){
     else if (tentativi == 1){
         tentativi = tentativi-1;
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
-            console.log(parola);
-            console.log(tentativi);
             tentativi = 3;
             immagine_random();            
         }else{
@@ -73,8 +67,6 @@ function checknome(){
     }
     else if (tentativi == 0){
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
-            console.log(parola);
-            console.log(tentativi);
             tentativi = 3;
             immagine_random();
         }else{
@@ -82,7 +74,6 @@ function checknome(){
         document.getElementById("testo_perdita").innerHTML = "<b>GAME OVER</b>";
         }
     }
-    console.log(immagine_scelta.substring(0, immagine_scelta.lastIndexOf(".")));
 }
 
 
