@@ -76,8 +76,6 @@ function checknome(){
     }
 }
 
-
-
 let input = document.getElementById("testo_input");
 input.addEventListener("keypress", function(event){
     if (event.key === "Enter"){
