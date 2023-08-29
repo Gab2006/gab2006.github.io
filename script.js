@@ -19,6 +19,13 @@ immagini = ["cane.jpg",
             "tomas.jpg",
         ]
 let tentativi = 3;
+let punti = 0;
+let testo_punti
+function punteggi() {
+    testo_punti = document.getElementById("punti");
+    punti = punti+1;
+    testo_punti.innerHTML = `PUNTI: ${punti}`;
+}
 
 function immagine_random(){
     document.getElementById("mostra_immagine").style.webkitFilter = `blur(30px)`;
@@ -31,13 +38,13 @@ function ricomincia(){
     location.reload();
 }
 
-
 function checknome(){
     let parola = document.getElementById("testo_input").value;
     document.getElementById("testo_input").value = "";
     if (tentativi == 3){
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
             tentativi = 3;
+            punteggi()
             immagine_random();            
         }else{
             document.getElementById("mostra_immagine").style.webkitFilter = `blur(20px)`;
@@ -49,6 +56,7 @@ function checknome(){
         tentativi = tentativi-1;
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
             tentativi = 3;
+            punteggi()
             immagine_random();            
         }else{
             document.getElementById("mostra_immagine").style.webkitFilter = `blur(10px)`;
@@ -59,6 +67,7 @@ function checknome(){
         tentativi = tentativi-1;
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
             tentativi = 3;
+            punteggi()
             immagine_random();            
         }else{
             document.getElementById("mostra_immagine").style.webkitFilter = `blur(5px)`;
@@ -67,7 +76,9 @@ function checknome(){
     }
     else if (tentativi == 0){
         if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
+
             tentativi = 3;
+            punteggi()
             immagine_random();
         }else{
         document.getElementById("mostra_immagine").style.webkitFilter = `blur(0px)`;
