@@ -17,7 +17,18 @@ immagini = ["cane.jpg",
             "stepny.jpg",
             "hasbulla.jpg",
             "tomas.jpg",
+            "instagram.jpg",
+            "cuffie.jpg",
+            "camino.jpg",
+            "khabib.jpg",
+            "burj khalifa.jpg",
+            "tom cruise.jpg",
+            "minecraft.jpg",
+            "matita.jpg",
+            "alberto angela.jpg",
+            "stadio.jpg",
         ]
+
 let tentativi = 3;
 let punti = 0;
 let testo_punti
