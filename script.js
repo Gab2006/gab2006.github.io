@@ -93,7 +93,7 @@ function checknome(){
             immagine_random();
         }else{
         document.getElementById("mostra_immagine").style.webkitFilter = `blur(0px)`;
-        document.getElementById("testo_perdita").innerHTML = "<b>GAME OVER</b>";
+        document.getElementById("ricominciare").style.opacity = "100%";
         }
     }
 }
