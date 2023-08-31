@@ -46,7 +46,7 @@ function immagine_random(){
 }
 
 function ricomincia(){
-    location.href = "home.html";
+    location.href = "index.html";
 }
 
 function checknome(){
