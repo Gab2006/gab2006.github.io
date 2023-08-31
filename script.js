@@ -46,7 +46,7 @@ function immagine_random(){
 }
 
 function ricomincia(){
-    location.reload();
+    location.href = "home.html";
 }
 
 function checknome(){
