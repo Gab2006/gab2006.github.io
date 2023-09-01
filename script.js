@@ -28,10 +28,22 @@ immagini = ["cane.jpg",
             "alberto angela.jpg",
             "stadio.jpg",
         ]
-
 let tentativi = 3;
 let punti = 0;
-let testo_punti
+let testo_punti;
+let risposta_corretta = new Audio("./sounds/risposta_corretta.mp3");
+let risposta_sbagliata = new Audio("./sounds/risposta_sbagliata.mp3");
+let perso = new Audio("./sounds/perso.mp3");
+let master_volume;
+
+function volume_gioco(){
+    master_volume = document.getElementById('master_volume').value;
+    master_volume = master_volume/100;
+    console.log(master_volume);
+    risposta_corretta.volume = master_volume;
+    risposta_sbagliata.volume = master_volume;
+    perso.volume = master_volume;
+}
 function punteggi() {
     testo_punti = document.getElementById("punti");
     punti = punti+1;
@@ -53,11 +65,13 @@ function checknome(){
     let parola = document.getElementById("testo_input").value;
     document.getElementById("testo_input").value = "";
     if (tentativi == 3){
-        if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
+        if (parola.toLowerCase() == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
             tentativi = 3;
+            risposta_corretta.play();
             punteggi()
             immagine_random();            
         }else{
+            risposta_sbagliata.play();
             document.getElementById("mostra_immagine").style.webkitFilter = `blur(20px)`;
             tentativi = tentativi-1;
         }
@@ -65,35 +79,41 @@ function checknome(){
     }
     else if (tentativi == 2){
         tentativi = tentativi-1;
-        if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
+        if (parola.toLowerCase() == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
             tentativi = 3;
+            risposta_corretta.play();
             punteggi()
             immagine_random();            
         }else{
             document.getElementById("mostra_immagine").style.webkitFilter = `blur(10px)`;
             tentativi = tentativi-1;
+            risposta_sbagliata.play();
         }
     }
     else if (tentativi == 1){
         tentativi = tentativi-1;
-        if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
+        if (parola.toLowerCase() == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
             tentativi = 3;
+            risposta_corretta.play();
             punteggi()
             immagine_random();            
         }else{
             document.getElementById("mostra_immagine").style.webkitFilter = `blur(5px)`;
             tentativi = tentativi-1;
+            risposta_sbagliata.play();
         }
     }
     else if (tentativi == 0){
-        if (parola == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
+        if (parola.toLowerCase() == immagine_scelta.substring(0, immagine_scelta.lastIndexOf("."))){
 
             tentativi = 3;
+            risposta_corretta.play();
             punteggi()
             immagine_random();
         }else{
-        document.getElementById("mostra_immagine").style.webkitFilter = `blur(0px)`;
-        document.getElementById("ricominciare").style.opacity = "100%";
+            document.getElementById("mostra_immagine").style.webkitFilter = `blur(0px)`;
+            document.getElementById("ricominciare").style.opacity = "100%";
+            perso.play()
         }
     }
 }

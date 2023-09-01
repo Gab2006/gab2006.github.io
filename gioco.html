@@ -21,6 +21,10 @@
         </form>
         <button id="bottone_invio" type="button" onclick="checknome()"></button>
         <button id="ricominciare" type="button" onclick="ricomincia()"><img id="icona_rotella" src="./icone/caricamento.png"></button>
+            <h3 id="impostazioni">volume</h3>
+            <form name="impostazioni_generali">
+                <input type="range" id="master_volume" min="0" max="100" onchange="volume_gioco()">
+            </form>
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
