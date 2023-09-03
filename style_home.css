@@ -40,3 +40,12 @@ html{
     margin: 0 auto;
     margin-top: 4px;
 }
+
+#contatti{
+    margin-top: 250px;
+    color:rgb(117, 117, 117);
+    font-family: CustomFont;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: -2px 2px 0px rgb(58, 58, 58) ;
+}
